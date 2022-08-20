@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.10.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.10.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="read_csv" compatibility="9.10.001" expanded="true" height="68" name="Read CSV" width="90" x="45" y="34">
+        <parameter key="csv_file" value="/Users/jonhenrik/Downloads/uplift_seminarWI.csv"/>
+        <parameter key="column_separators" value=";"/>
+        <parameter key="trim_lines" value="false"/>
+        <parameter key="use_quotes" value="true"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="skip_comments" value="true"/>
+        <parameter key="comment_characters" value="#"/>
+        <parameter key="starting_row" value="1"/>
+        <parameter key="parse_numbers" value="true"/>
+        <parameter key="decimal_character" value="."/>
+        <parameter key="grouped_digits" value="false"/>
+        <parameter key="grouping_character" value=","/>
+        <parameter key="infinity_representation" value=""/>
+        <parameter key="date_format" value=""/>
+        <parameter key="first_row_as_names" value="true"/>
+        <list key="annotations"/>
+        <parameter key="time_zone" value="SYSTEM"/>
+        <parameter key="locale" value="English (United States)"/>
+        <parameter key="encoding" value="UTF-8"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="Conversion.true.binominal.label"/>
+          <parameter key="1" value="Treatment.true.binominal.attribute"/>
+          <parameter key="2" value="VisitorKnown.true.binominal.attribute"/>
+          <parameter key="3" value="ViewsOnSale.true.integer.attribute"/>
+          <parameter key="4" value="ViewedBeforePageCART.true.binominal.attribute"/>
+          <parameter key="5" value="HadBasketAdd.true.integer.attribute"/>
+          <parameter key="6" value="WasConvertedBefore.true.integer.attribute"/>
+          <parameter key="7" value="TimeSinceLastVisit.true.polynominal.attribute"/>
+          <parameter key="8" value="TimeSinceLastConversion.true.polynominal.attribute"/>
+          <parameter key="9" value="TimeOnProduct.true.polynominal.attribute"/>
+          <parameter key="10" value="TimeOnOverview.true.polynominal.attribute"/>
+          <parameter key="11" value="TimeOnSale.true.polynominal.attribute"/>
+          <parameter key="12" value="ClicksPerProduct.true.polynominal.attribute"/>
+          <parameter key="13" value="ChannelPaid.true.binominal.attribute"/>
+          <parameter key="14" value="TimeToFirstSearch.true.polynominal.attribute"/>
+          <parameter key="15" value="TimeToFirstOverview.true.polynominal.attribute"/>
+          <parameter key="16" value="TimeToFirstProduct.true.polynominal.attribute"/>
+          <parameter key="17" value="TimeToFirstCART.true.polynominal.attribute"/>
+          <parameter key="18" value="TimeToFirstSale.true.polynominal.attribute"/>
+          <parameter key="19" value="TimeSinceFirstCART.true.polynominal.attribute"/>
+          <parameter key="20" value="NrDifferentProduct.true.integer.attribute"/>
+          <parameter key="21" value="TimeToBasketAdd.true.polynominal.attribute"/>
+          <parameter key="22" value="BasketQuantity.true.integer.attribute"/>
+          <parameter key="23" value="NormalizedBasketSum.true.integer.attribute"/>
+          <parameter key="24" value="TimeSinceClick.true.integer.attribute"/>
+          <parameter key="25" value="TimeSinceTabSwitch.true.polynominal.attribute"/>
+          <parameter key="26" value="ScreenWidth.true.integer.attribute"/>
+          <parameter key="27" value="DurationLastVisit.true.polynominal.attribute"/>
+          <parameter key="28" value="HourOfDay.true.integer.attribute"/>
+          <parameter key="29" value="PageIsHome.true.binominal.attribute"/>
+          <parameter key="30" value="PageIsSearch.true.binominal.attribute"/>
+          <parameter key="31" value="PageIsProduct.true.binominal.attribute"/>
+          <parameter key="32" value="PageIsOverview.true.binominal.attribute"/>
+          <parameter key="33" value="PageIsSale.true.binominal.attribute"/>
+        </list>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeSinceLastVisit" width="90" x="179" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeSinceLastVisit"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="417.332.515.234.465"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeSinceLastConversion" width="90" x="313" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeSinceLastConversion"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="387.402.608.257.218"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeOnProduct" width="90" x="447" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeOnProduct"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="715.005.855.436.607"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeOnOverview" width="90" x="581" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeOnOverview"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="635.893.025.932.571"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeOnSale" width="90" x="715" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeOnSale"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="667.088.239.658.343"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="ClicksPerProduct" width="90" x="849" y="34">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value="ClicksPerProduct"/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="152.824.775.433.392"/>
+        <parameter key="expression_value" value="if(ClicksPerProduct &gt; 100,&quot;&quot;,ClicksPerProduct)"/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeToFirstSearch" width="90" x="983" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToFirstSale"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="139.346.467.067.547"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimetoFirstOverview" width="90" x="1117" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToFirstOverview"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="741.542.893.631.471"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeToFirstProduct" width="90" x="1251" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToFirstProduct"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="130.773.922.536.703"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeToFirstCART" width="90" x="1385" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToFirstCART"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="272.951.640.667.025"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeToFirstSale" width="90" x="1519" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToFirstSale"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="792.896.657.825.784"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeSinceFirstCART" width="90" x="1787" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeSinceFirstCART"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="320.822.592.791.824"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeToBasketAdd" width="90" x="1921" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToBasketAdd"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="267.689.931.696.855"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeSinceTabSwitch" width="90" x="2055" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeSinceTabSwitch"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="143.125.195.099.837"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="DurationLastVisit" width="90" x="2189" y="34">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value="DurationLastVisit"/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="760.044.443.726.684"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="declare_missing_value" compatibility="9.10.001" expanded="true" height="82" name="TimeToFirstSearch (2)" width="90" x="2323" y="34">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="TimeToFirstSearch"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="mode" value="nominal"/>
+        <parameter key="nominal_value" value="139.346.467.067.547"/>
+        <parameter key="expression_value" value=""/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.10.001" expanded="true" height="68" name="Store" width="90" x="2457" y="34">
+        <parameter key="repository_entry" value="//Local Repository/IS Seminar/uplift_preprocessed"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.10.001" expanded="true" height="82" name="Write CSV" width="90" x="2658" y="34">
+        <parameter key="csv_file" value="/Users/jonhenrik/p2_uplift_seminarWI.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="date_format" value="yyyy-MM-dd HH:mm:ss"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Read CSV" from_port="output" to_op="TimeSinceLastVisit" to_port="example set input"/>
+      <connect from_op="TimeSinceLastVisit" from_port="example set output" to_op="TimeSinceLastConversion" to_port="example set input"/>
+      <connect from_op="TimeSinceLastConversion" from_port="example set output" to_op="TimeOnProduct" to_port="example set input"/>
+      <connect from_op="TimeOnProduct" from_port="example set output" to_op="TimeOnOverview" to_port="example set input"/>
+      <connect from_op="TimeOnOverview" from_port="example set output" to_op="TimeOnSale" to_port="example set input"/>
+      <connect from_op="TimeOnSale" from_port="example set output" to_op="ClicksPerProduct" to_port="example set input"/>
+      <connect from_op="ClicksPerProduct" from_port="example set output" to_op="TimeToFirstSearch" to_port="example set input"/>
+      <connect from_op="TimeToFirstSearch" from_port="example set output" to_op="TimetoFirstOverview" to_port="example set input"/>
+      <connect from_op="TimetoFirstOverview" from_port="example set output" to_op="TimeToFirstProduct" to_port="example set input"/>
+      <connect from_op="TimeToFirstProduct" from_port="example set output" to_op="TimeToFirstCART" to_port="example set input"/>
+      <connect from_op="TimeToFirstCART" from_port="example set output" to_op="TimeToFirstSale" to_port="example set input"/>
+      <connect from_op="TimeToFirstSale" from_port="example set output" to_op="TimeSinceFirstCART" to_port="example set input"/>
+      <connect from_op="TimeSinceFirstCART" from_port="example set output" to_op="TimeToBasketAdd" to_port="example set input"/>
+      <connect from_op="TimeToBasketAdd" from_port="example set output" to_op="TimeSinceTabSwitch" to_port="example set input"/>
+      <connect from_op="TimeSinceTabSwitch" from_port="example set output" to_op="DurationLastVisit" to_port="example set input"/>
+      <connect from_op="DurationLastVisit" from_port="example set output" to_op="TimeToFirstSearch (2)" to_port="example set input"/>
+      <connect from_op="TimeToFirstSearch (2)" from_port="example set output" to_op="Store" to_port="input"/>
+      <connect from_op="Store" from_port="through" to_op="Write CSV" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+    </process>
+  </operator>
+</process>
