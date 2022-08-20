@@ -4,6 +4,7 @@ This repository supplements the 2022 information systems seminar at Humboldt-Uni
 
 OVERVIEW OF FILES
 
-DATA - data sets and pre-processing
-ALGORITHMS.MODELING - algorithms used for modeling
-ALGORITHMS.EVALUATION - algorithms used for evaluation
+data - pre-processed data sets
+preprocessing - detail on pre-processing
+modeling - algorithms used for modeling
+evaluation - algorithms used for evaluation
