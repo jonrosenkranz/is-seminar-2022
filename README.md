@@ -5,10 +5,10 @@ This repository supplements the 2022 information systems seminar at Humboldt-Uni
 
 OVERVIEW OF FILES
 
-data - pre-processed data sets
+uplift_SeminarWI - pre-processed e-commerce data set
+MineThatData_email - pre-processed e-mail marketing data set
+bank - pre-processed bank marketing data set
 
-preprocessing - detail on pre-processing
+paper.algorithms - modeling algorithms used for paper
+paper.evaluation - evaluation algorithms used for paper
 
-modeling - algorithms used for modeling
-
-evaluation - algorithms used for evaluation
